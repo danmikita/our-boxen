@@ -63,6 +63,12 @@ node default {
   include atom
   include evernote
   include heroku
+
+  class { 'intellij':
+      edition => 'community',
+      version => '13.1.3'
+  }
+
   include intellij
   include java
   include osx
@@ -109,5 +115,11 @@ node default {
     path => "$git_repo_folder",
     ensure => "directory"
   }
+
+  repository {
+  '$git_repo_folder/profiles':
+    source   => 'danmikita/profiles',
+    provider => 'git';
+}
   
 }

@@ -1,0 +1,7 @@
+## MANDATORY LINES [START] ##
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+source /opt/repositories/profiles/profile_start
+## MANDATORY LINES [STOP] ##
+
+set -o vi
