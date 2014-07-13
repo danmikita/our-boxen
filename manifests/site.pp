@@ -57,6 +57,19 @@ node default {
   include git
   include hub
   include nginx
+  
+  # custom modules
+  include chrome
+  include atom
+  include evernote
+  include heroku
+  include intellij
+  include java
+  include osx
+  include steam
+  include vagrant
+  include virtualbox
+  include vim
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -80,7 +93,8 @@ node default {
     [
       'ack',
       'findutils',
-      'gnu-tar'
+      'gnu-tar',
+      'maven'
     ]:
   }
 
@@ -88,4 +102,12 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+  
+  # New Repo location
+  $git_repo_folder = "/opt/repositories"
+  file { "Git Repo Folder":
+    path => "$git_repo_folder",
+    ensure => "directory"
+  }
+  
 }
