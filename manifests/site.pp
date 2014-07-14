@@ -59,6 +59,7 @@ node default {
   include nginx
 
   # custom modules
+  include caffeine
   include chrome
   include atom
   include evernote
