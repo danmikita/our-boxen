@@ -61,6 +61,7 @@ github "xquartz",     "1.1.1"
 # https://github.com/boxen.
 
 github "atom",		            "1.0.0"
+github "caffeine",            "1.0.0"
 github "chrome",              "1.1.2"
 github "evernote",            "2.0.5"
 github "heroku",              "2.1.1"
@@ -70,4 +71,3 @@ github "osx",                 "2.4.0"
 github "steam",               "1.0.1"
 github "vagrant",             "3.0.9"
 github "virtualbox",          "1.0.11"
-github "vim",                 "1.0.5"

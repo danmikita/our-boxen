@@ -8,11 +8,11 @@ class people::danmikita {
   # OSX Settings
   #############################
   include osx::disable_app_quarantine
-  include osx::finder::show_hidden_files
   include osx::finder::unhide_library
   include osx::global::disable_autocorrect
   include osx::global::enable_keyboard_control_access
   include osx::no_network_dsstores
+  include osx::universal_access::ctrl_mod_zoom
 
   class { 'osx::global::key_repeat_delay':
     delay => 15

@@ -57,7 +57,7 @@ node default {
   include git
   include hub
   include nginx
-  
+
   # custom modules
   include chrome
   include atom
@@ -71,11 +71,9 @@ node default {
 
   include intellij
   include java
-  include osx
   include steam
   include vagrant
   include virtualbox
-  include vim
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -108,18 +106,9 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
-  
-  # New Repo location
-  $git_repo_folder = "/opt/repositories"
-  file { "Git Repo Folder":
-    path => "$git_repo_folder",
-    ensure => "directory"
-  }
 
-  repository {
-  '$git_repo_folder/profiles':
-    source   => 'danmikita/profiles',
-    provider => 'git';
-}
-  
+  package { 'git-flow':
+      ensure => present,
+      provider => homebrew
+  }
 }
